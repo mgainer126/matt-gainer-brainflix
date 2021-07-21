@@ -1,0 +1,69 @@
+.comment {
+  width: 320px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px #afafaf solid;
+  margin-left: auto;
+  margin-right: auto;
+  &__avitar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    margin-top: 1.3rem;
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-size: 3rem 3rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    margin: 1rem;
+  }
+  &__header {
+    margin-bottom: 0.5rem;
+    color: #afafaf;
+    font-weight: bold;
+  }
+  &__input {
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    height: 4rem;
+    width: 14rem;
+    border-color: #0095ff;
+  }
+  &__btn {
+    height: 3rem;
+    background-color: #0095ff;
+    border-color: #0095ff;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .comment {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    &__avitar {
+      margin-top: 2.4rem;
+    }
+    &__form {
+      display: flex;
+      flex-direction: row;
+    }
+    &__input {
+      width: 440px;
+      height: 48px;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    &__btn {
+      height: 55px;
+      padding: 0 2.723rem;
+      margin-top: 1.5rem;
+    }
+  }
+}

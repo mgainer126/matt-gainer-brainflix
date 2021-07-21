@@ -1,0 +1,34 @@
+.video-sec {
+  color: #afafaf;
+  margin-left: 0.5rem;
+}
+
+@font-face {
+  font-family: avenir-next-regular;
+  src: url("./assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: avenir-next-bold;
+  src: url("./assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: avenir-next-demi;
+  src: url("./assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf")
+    format("opentype");
+}
+* {
+  font-family: avenir-next-regular;
+}
+
+@media screen and (min-width: 1280px) {
+  .desktop {
+    display: flex;
+    justify-content: center;
+    &__right {
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
+  }
+}

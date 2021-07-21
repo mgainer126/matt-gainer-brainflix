@@ -1,0 +1,36 @@
+.video {
+  display: flex;
+  justify-content: center;
+  &__section-title {
+    padding: 0;
+  }
+  &__image {
+    height: 70px;
+    width: 120px;
+    padding: 0.6rem;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+  }
+  &__title {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  &__channel {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .video {
+    display: flex;
+    justify-content: flex-start;
+  }
+}

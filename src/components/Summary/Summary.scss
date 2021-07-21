@@ -1,0 +1,62 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem 1.5rem 1rem;
+  border-bottom: solid #afafaf 1px;
+  &__title {
+    font-size: 2.25rem;
+    margin: 0;
+  }
+  &__aln-info-metrics {
+    display: flex;
+    flex-direction: column;
+  }
+  &__author-info {
+    display: flex;
+    align-items: center;
+  }
+  &__author {
+    padding-right: 8px;
+  }
+  &__date {
+    color: #afafaf;
+  }
+  &__metrics {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  }
+  &__views {
+    padding-right: 2rem;
+  }
+  &__views-icon {
+    padding-right: 0.5rem;
+  }
+  &__likes-icon {
+    padding-right: 0.5rem;
+  }
+  &__para {
+    margin: 2rem 1rem 1.5rem 1rem;
+    width: 90%;
+    line-height: 1.5rem;
+  }
+  &__total-comment {
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .summary {
+    &__aln-info-metrics {
+      display: flex;
+      flex-direction: row;
+    }
+    &__metrics {
+      margin-left: auto;
+    }
+    &__para {
+      width: 525px;
+    }
+  }
+}

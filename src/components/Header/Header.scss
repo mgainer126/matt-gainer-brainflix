@@ -1,0 +1,118 @@
+@use "partials/mediaquery" as *;
+
+.header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  &__wrapper {
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.5rem;
+  }
+  &__logo {
+    background-image: url(../../assets/Logo/Logo-brainflix.svg);
+    background-size: 10rem 2rem;
+    background-repeat: no-repeat;
+    padding-left: 2rem;
+    padding-right: 10rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+  &__btm-right {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__search {
+    width: 10rem;
+    border: solid 2px #e1e1e1;
+    border-radius: 4px;
+  }
+  &__button {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #0095ff;
+    color: white;
+    border: 1px blue solid;
+  }
+  &__avitar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-size: 3rem 3rem;
+  }
+}
+
+#search {
+  height: 2.5rem;
+  width: 17rem;
+  background-image: url("../../assets/icons/Icon-search.svg");
+  background-size: 1.5rem;
+  background-repeat: no-repeat;
+  text-indent: 0.5rem;
+  padding-left: 1.5rem;
+}
+#search:focus {
+  background-image: none;
+  text-indent: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+    &__btm-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 1.5rem;
+    }
+    &__logo {
+      margin: 0px;
+      padding-right: 35%;
+    }
+    &__button {
+      width: 10rem;
+      margin-left: 1.5rem;
+    }
+    &__avitar {
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+  }
+  #search {
+    width: 10rem;
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    width: 100%;
+    &__wrapper {
+      width: 1280px;
+    }
+    &__btm-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-right: 7rem;
+    }
+    &__logo {
+      margin-left: 5rem;
+    }
+  }
+}

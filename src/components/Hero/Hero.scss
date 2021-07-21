@@ -1,0 +1,26 @@
+.hero {
+  &__video {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    &__video {
+      width: 43.75rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 33.75rem;
+    &__video {
+      width: 59rem;
+      height: 33.75rem;
+    }
+  }
+}

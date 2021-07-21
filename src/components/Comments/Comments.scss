@@ -1,0 +1,43 @@
+.comment {
+  &__history {
+    border-bottom: solid #afafaf 1px;
+  }
+  &__history-head {
+    display: flex;
+    align-items: center;
+  }
+  &__history-avitar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    background-size: 3rem 3rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+  }
+  &__history-name {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  &__history-date {
+    margin-left: auto;
+    margin-right: 1rem;
+    color: #afafaf;
+  }
+  &__history-para {
+    margin: 0 0.5rem 0 4rem;
+    padding: 0.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .comment {
+    &__history-date {
+      margin-left: 1rem;
+    }
+    &__history-para {
+      width: 39rem;
+    }
+  }
+}
