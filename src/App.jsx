@@ -78,7 +78,7 @@ export default class Main extends Component {
               </Switch>
             </div>
             <div className="desktop__right">
-              <h3 className="video-sec">Next Video</h3>
+              <h3 className="video-sec">Next Vide</h3>
               <Switch>
                 <Route
                   exact
