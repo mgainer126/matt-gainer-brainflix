@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import "./Summary.scss";
 
 function Summary({

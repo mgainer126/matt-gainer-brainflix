@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import "./Comments.scss";
 
 function Comments({ commentsArr }) {
