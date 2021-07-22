@@ -7,10 +7,10 @@ import Header from "./components/Header/Header";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Route path="/" component={Header} />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/upload-page" component={Upload} />
+        <Route exact path="/upload-video" component={Upload} />
       </Switch>
     </BrowserRouter>
   );

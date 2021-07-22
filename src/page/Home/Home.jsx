@@ -41,7 +41,6 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-        <Header search={this.state.search} />
         <Hero poster={this.state.poster} />
         <div className="desktop">
           <div className="desktop__left">

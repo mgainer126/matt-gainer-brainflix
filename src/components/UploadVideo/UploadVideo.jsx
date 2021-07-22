@@ -1,8 +1,9 @@
+import "../UploadVideo/UploadVideo.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 
 function UploadVideo() {
   return (
-    <thumbnail>
+    <thumbnail className="thumbnail">
       <h3 className="thumbnail__heading">Upload Video</h3>
       <h4 className="thumbnail__video-title">VIDEO THUMBNAIL</h4>
       <img

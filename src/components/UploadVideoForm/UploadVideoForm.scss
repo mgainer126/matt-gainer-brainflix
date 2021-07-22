@@ -1,0 +1,36 @@
+.upload {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    color: #afafaf;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 1rem 0 1rem 0;
+  }
+  &__input {
+    height: 2rem;
+    margin-top: 0.5rem;
+    &-desc {
+      height: 8.9rem;
+      margin-top: 0.5rem;
+    }
+  }
+  &__btn {
+    background-color: #0095ff;
+    color: white;
+    height: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    &--cancel {
+      background-color: white;
+      color: #0095ff;
+      border: 0px;
+      font-weight: bold;
+    }
+  }
+}
