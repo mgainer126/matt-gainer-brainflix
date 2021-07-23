@@ -60,10 +60,10 @@ export default class Main extends Component {
           <div className="desktop__right">
             <h3 className="video-sec">Next Video</h3>
             <Video
-              videosArr={this.state.comments}
-              clickHandle={this.clickVideo}
-              posterVideo={this.state.poster}
-              filteredVideos={this.filteredVideo}
+            // videosArr={this.state.comments}
+            // clickHandle={this.clickVideo}
+            // posterVideo={this.state.poster}
+            // filteredVideos={this.filteredVideo}
             />
           </div>
         </div>
