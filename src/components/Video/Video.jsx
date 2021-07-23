@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Video.scss";
 
@@ -37,53 +38,16 @@ export default class Video extends Component {
     let clickHandle = this.clickVideo;
     return videosarr.map((video) => {
       return (
-        <div className="video" onClick={() => clickHandle(video)}>
-          <img className="video__image" src={video.image} />
-          <div className="video__info">
-            <h3 className="video__title">{video.title}</h3>
-            <h3 className="video__channel">{video.channel}</h3>
+        <Link to="/">
+          <div className="video" onClick={() => clickHandle(video)}>
+            <img className="video__image" src={video.image} />
+            <div className="video__info">
+              <h3 className="video__title">{video.title}</h3>
+              <h3 className="video__channel">{video.channel}</h3>
+            </div>
           </div>
-        </div>
+        </Link>
       );
     });
   }
-  //   return (
-  //     <div>
-  //       <h1></h1>
-  //     </div>
-  //   );
-  // }
-  // render() {
-  //   return;
-  //   <>
-  //     {this.state.videos.map((video) => (
-  //       <h1>{video.title}</h1>
-  //     ))}
-  //   </>;
-  // }
-
-  // clickVideo = (click) => {
-  //   this.setState({
-  //     poster: click.image,
-  //     title: click.title,
-  //     summary: click.description,
-  //     likes: click.likes,
-  //     views: click.views,
-  //     author: click.channel,
-  //     timestamp: click.timestamp,
-  //   });
-  // };
-
-  // let filteredArray = videosArr.filter((video) => video.image !== posterVideo);
-  // return filteredArray.map((video) => {
-  //   return (
-  //     <div className="video" onClick={() => clickHandle(video)}>
-  //       <img className="video__image" src={video.image} />
-  //       <div className="video__info">
-  //         <h3 className="video__title">{video.title}</h3>
-  //         <h3 className="video__channel">{video.channel}</h3>
-  //       </div>
-  //     </div>
-  //   );
-  // });
 }
