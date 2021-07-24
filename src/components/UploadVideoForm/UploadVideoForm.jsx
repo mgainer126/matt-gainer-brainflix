@@ -4,7 +4,7 @@ function UploadVideoForm() {
   return (
     <uploadvideoform className="upload">
       <form className="upload__form">
-        <label for="upload" className="upload__header">
+        <label htmlFor="upload" className="upload__header">
           TITLE YOUR VIDEO
           <input
             type="text"
@@ -14,7 +14,7 @@ function UploadVideoForm() {
             placeholder="Add a title to your video"
           ></input>
         </label>
-        <label for="upload" className="upload__header">
+        <label htmlFor="upload" className="upload__header">
           ADD A VIDEO DESCRIPTION
           <input
             type="text"

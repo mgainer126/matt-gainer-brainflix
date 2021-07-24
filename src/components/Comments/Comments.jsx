@@ -1,8 +1,8 @@
-import React, { Component } from "react";
 import "./Comments.scss";
 
-function Comments({ commentsArr }) {
-  return commentsArr.map((comment) => {
+function Comments({ videosDetailed }) {
+  console.log(videosDetailed);
+  return videosDetailed.comments.map((comment) => {
     let date = comment.timestamp;
     let newdate = new Date(date * 1000);
     let month = newdate.getMonth();

@@ -10,7 +10,7 @@ function Header() {
         </Link>
         <div className="header__btm-right">
           <form>
-            <label for="search"></label>
+            <label htmlFor="search"></label>
             <input
               type="text"
               className="header__search"
