@@ -1,6 +1,12 @@
 .video {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
+  margin-right: auto;
+  text-decoration: none;
+  &__links {
+    text-decoration: none;
+    color: black;
+  }
   &__section-title {
     padding: 0;
   }
@@ -12,13 +18,14 @@
   &__info {
     display: flex;
     flex-direction: column;
-    width: 175px;
+    width: 150px;
   }
   &__title {
     margin: 0;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
     font-size: 0.75rem;
     font-weight: bold;
+    width: 6.2rem;
   }
   &__channel {
     margin: 0;

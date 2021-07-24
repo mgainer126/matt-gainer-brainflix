@@ -1,9 +1,9 @@
 .thumbnail {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border-top: 2px solid #e1e1e1;
   &__heading {
-    font-size: 36px;
+    font-size: 24px;
     margin-right: auto;
     margin-left: 1rem;
     margin-top: 1.5rem;
@@ -17,6 +17,41 @@
     margin-bottom: 0.5rem;
   }
   &__img {
-    width: 90%;
+    width: 288px;
+    height: 153px;
+    border-radius: 4px;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .thumbnail {
+    border-top: 2px solid #e1e1e1;
+    &__heading {
+      border-bottom: 1px solid #e1e1e1;
+      width: 95%;
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+      font-size: 36px;
+      font-weight: bolder;
+    }
+    &__img {
+      width: 344px;
+      height: 183px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .thumbnail {
+    border-top: none;
+    &__heading {
+      border-bottom: none;
+    }
+    &__video {
+      &-title {
+        margin-top: 3.5rem;
+      }
+    }
   }
 }

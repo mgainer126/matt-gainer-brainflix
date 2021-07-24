@@ -4,6 +4,7 @@
   width: 100vw;
   display: flex;
   justify-content: center;
+  border-bottom: solid 1px #e1e1e1;
   &__wrapper {
     width: 320px;
     display: flex;
@@ -31,21 +32,21 @@
     border-radius: 4px;
   }
   &__button {
-    width: 15rem;
+    width: 224px;
     height: 3rem;
     border-radius: 4px;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     background-color: #0095ff;
     color: white;
-    border: 1px blue solid;
+    border: 1px #0095ff solid;
   }
   &__avitar {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
     margin-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     background-image: url(../../assets/images/Mohan-muruge.jpg);
     background-size: 3rem 3rem;
   }
@@ -82,9 +83,11 @@
     &__logo {
       margin: 0px;
       padding-right: 35%;
+      width: 10rem;
+      margin-top: 1rem;
     }
     &__button {
-      width: 10rem;
+      width: 103px;
       margin-left: 1.5rem;
     }
     &__avitar {
@@ -93,7 +96,7 @@
     }
   }
   #search {
-    width: 10rem;
+    width: 252px;
     height: 2.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;

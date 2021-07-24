@@ -10,7 +10,7 @@ function Video({ videosArr, clickHandle, videosDetailed }) {
 
   return filteredArray.map((video) => {
     return (
-      <Link to={video.id}>
+      <Link className="video__links" to={video.id}>
         <div className="video" onClick={() => clickHandle(video)}>
           <img className="video__image" src={video.image} />
           <div className="video__info">

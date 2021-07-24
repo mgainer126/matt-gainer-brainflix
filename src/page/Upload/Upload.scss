@@ -1,0 +1,19 @@
+@media screen and (min-width: 1280px) {
+  .upload-title {
+    width: 15rem;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bolder;
+  }
+  .upload-desktop {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #e1e1e1;
+    border-top: solid 1px #e1e1e1;
+    height: 21rem;
+    margin-top: 2rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
+  }
+}

@@ -14,7 +14,7 @@ function UploadVideoForm() {
             placeholder="Add a title to your video"
           ></input>
         </label>
-        <label htmlFor="upload" className="upload__header">
+        <label htmlFor="upload" className="upload__header--desc">
           ADD A VIDEO DESCRIPTION
           <input
             type="text"
@@ -24,8 +24,10 @@ function UploadVideoForm() {
             placeholder="Add a description to your video"
           ></input>
         </label>
-        <button className="upload__btn">PUBLISH</button>
-        <button className="upload__btn--cancel">CANCEL</button>
+        <div className="upload__cta">
+          <button className="upload__btn">PUBLISH</button>
+          <button className="upload__btn--cancel">CANCEL</button>
+        </div>
       </form>
     </uploadvideoform>
   );
