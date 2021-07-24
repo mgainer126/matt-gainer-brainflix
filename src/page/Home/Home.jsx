@@ -15,43 +15,34 @@ export default class Main extends Component {
   state = {
     videos: null,
     videosDetailed: null,
-    // comments: [],
-    // timestamp: [],
-    // author: [],
-    // title: [],
-    // poster: [],
-    // summary: [],
-    // likes: [],
-    // views: [],
-    // id: [],
+    id: null,
   };
 
   // Detailed API Call used to pull specific comment by ID
 
-  // clickVideo = (click) => {
-  //   let id = click.id;
-  //   console.log(id);
-  //   axios
-  //     .get(
-  //       `https://project-2-api.herokuapp.com/videos/${id}?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`
-  //     )
-  //     .then((res) => {
-  //       console.log(res);
-  //       this.setState({
-  //         poster: res.data.image,
-  //         title: res.data.title,
-  //         summary: res.data.description,
-  //         likes: res.data.likes,
-  //         views: res.data.views,
-  //         author: res.data.channel,
-  //         timestamp: res.data.timestamp,
-  //         comments: res.data.comments,
-  //         id: res.data.id,
-  //       });
-  //     });
-  // };
+  clickVideo = (click) => {
+    let id = click.id;
+    this.setState({ id: click.id });
+    console.log(id); //This captures the id of the video selected
+  };
 
-  // This occurs during first load of the page
+  componentDidUpdate(prevState, prevProps) {
+    console.log(this.state.id);
+    if (this.state.id !== null)
+      axios
+        .get(
+          `https://project-2-api.herokuapp.com/videos/${this.state.id}?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`
+        )
+        .then((res) => {
+          console.log(res);
+          this.setState({
+            videosDetailed: res.data,
+            id: res.id,
+          });
+          return;
+        });
+  }
+
   componentDidMount() {
     axios
       .get(
@@ -64,7 +55,6 @@ export default class Main extends Component {
         return res.data[0].id;
       })
       .then((res) => {
-        console.log(res);
         axios
           .get(
             `https://project-2-api.herokuapp.com/videos/${res}?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`

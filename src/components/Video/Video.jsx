@@ -1,6 +1,4 @@
-import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "./Video.scss";
 
 import "./Video.scss";
@@ -13,7 +11,7 @@ function Video({ videosArr, clickHandle, videosDetailed }) {
   return filteredArray.map((video) => {
     return (
       <Link to={video.id}>
-        <div className="video">
+        <div className="video" onClick={() => clickHandle(video)}>
           <img className="video__image" src={video.image} />
           <div className="video__info">
             <h3 className="video__title">{video.title}</h3>
