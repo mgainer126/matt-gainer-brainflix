@@ -1,6 +1,13 @@
 import "../UploadVideoForm/UploadVideoForm.scss";
+import { useHistory } from "react-router-dom";
 
 function UploadVideoForm() {
+  const history = useHistory();
+
+  const handleRoute = () => {
+    history.push("/");
+  };
+
   return (
     <uploadvideoform className="upload">
       <form className="upload__form">
@@ -25,12 +32,26 @@ function UploadVideoForm() {
           ></input>
         </label>
         <div className="upload__cta">
-          <button className="upload__btn">PUBLISH</button>
+          <button
+            className="upload__btn"
+            onClick={() => {
+              alert("Congradulations You Have Uploaded Sucesfully");
+              {
+                handleRoute();
+              }
+            }}
+          >
+            PUBLISH
+          </button>
           <button className="upload__btn--cancel">CANCEL</button>
         </div>
       </form>
     </uploadvideoform>
   );
 }
+
+// function myFunction() {
+//   alert("Added Succesfully!");
+// }
 
 export default UploadVideoForm;

@@ -5,11 +5,7 @@ function UploadVideo() {
   return (
     <thumbnail className="thumbnail">
       <h4 className="thumbnail__video-title">VIDEO THUMBNAIL</h4>
-      <img
-        className="thumbnail__img"
-        src={thumbnail}
-        alt="thumbnail image"
-      ></img>
+      <img className="thumbnail__img" src={thumbnail} alt="thumbnail"></img>
     </thumbnail>
   );
 }

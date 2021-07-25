@@ -6,7 +6,7 @@ function CommentsForm() {
       <div className="comment">
         <div className="comment__avitar"></div>
         <form className="comment__form">
-          <label for="comment" className="comment__header">
+          <label htmlFor="comment" className="comment__header">
             Join The Conversation
             <input
               type="text"

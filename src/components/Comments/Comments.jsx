@@ -1,7 +1,6 @@
 import "./Comments.scss";
 
 function Comments({ videosDetailed }) {
-  console.log(videosDetailed);
   return videosDetailed.comments.map((comment) => {
     let date = comment.timestamp;
     let newdate = new Date(date * 1000);
@@ -13,7 +12,9 @@ function Comments({ videosDetailed }) {
       <div className="comment__history">
         <div className="comment__history-head">
           <div className="comment__history-avitar"></div>
-          <h4 className="comment__history-name">{comment.name}</h4>
+          <h4 className="comment__history-name" key={comment.id}>
+            {comment.name}
+          </h4>
           <p className="comment__history-date">{fullYear}</p>
         </div>
         <p className="comment__history-para">{comment.comment}</p>
