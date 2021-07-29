@@ -36,7 +36,7 @@ export default class Main extends Component {
 
   componentDidMount() {
     axios
-      .get("/videos/video-details")
+      .get("/videos/videos")
       .then((res) => {
         console.log(res.data);
         this.setState({
@@ -44,17 +44,14 @@ export default class Main extends Component {
         });
         return res.data[0].id;
       })
-      // .then((res) => {
-      //   axios
-      //     .get(
-      //       `https://project-2-api.herokuapp.com/videos/${res}?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`
-      //     )
-      //     .then((res) => {
-      //       this.setState({
-      //         videosDetailed: res.data,
-      //       });
-      //     });
-      // })
+      .then((res) => {
+        axios.get(`videos/video-details${res}`).then((res) => {
+          console.log(res.data[0].comments);
+          this.setState({
+            videosDetailed: res.data,
+          });
+        });
+      })
       .catch((error) => {
         console.log(error);
       });

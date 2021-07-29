@@ -9,10 +9,11 @@
 const express = require("express");
 const router = express.Router();
 // const videoDetails = require("../data/video-details.json");
-const videos = require("../data/videos.json");
+// const videos = require("../data/videos.json");
 const fs = require("fs");
 const path = require("path");
 
+//Video Details
 const displayVideoDetails = () => {
   const videoDetailsData = fs.readFileSync(
     path.resolve(__dirname, "../data/video-details.json")
@@ -22,24 +23,25 @@ const displayVideoDetails = () => {
   return parsedVideoDetails;
 };
 
-router.get("/video-details", (req, res) => {
+router.get("/video-details:id", (req, res) => {
   const videoDetails = displayVideoDetails();
   res.json(videoDetails);
   console.log(videoDetails);
 });
 
-// const videos = () => {
-//   const videosData = fs.readFileSync(
-//     path.resolve(__dirname, "../data/videos.json")
-//   );
-//   const parsedVideos = JSON.parse(videosData);
-//   console.log(parsedVideos);
-//   return parsedVideos;
-// };
+//Videos
+const videos = () => {
+  const videosData = fs.readFileSync(
+    path.resolve(__dirname, "../data/videos.json")
+  );
+  const parsedVideos = JSON.parse(videosData);
+  console.log(parsedVideos);
+  return parsedVideos;
+};
 
-// router.get("/videos", (req, res) => {
-//   const videoList = videos();
-//   res.json(videoList);
-// });
+router.get("/videos", (req, res) => {
+  const videoList = videos();
+  res.json(videoList);
+});
 
 module.exports = router;

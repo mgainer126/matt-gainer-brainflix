@@ -1,7 +1,9 @@
 import "./Comments.scss";
 
 function Comments({ videosDetailed }) {
-  return videosDetailed.comments.map((comment) => {
+  let videoArr = videosDetailed;
+  console.log(videoArr);
+  return videoArr.map((comment) => {
     let date = comment.timestamp;
     let newdate = new Date(date * 1000);
     let month = newdate.getMonth();
