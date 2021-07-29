@@ -8,15 +8,38 @@
 
 const express = require("express");
 const router = express.Router();
-const videoDetails = require("../data/video-details.json");
+// const videoDetails = require("../data/video-details.json");
 const videos = require("../data/videos.json");
+const fs = require("fs");
+const path = require("path");
+
+const displayVideoDetails = () => {
+  const videoDetailsData = fs.readFileSync(
+    path.resolve(__dirname, "../data/video-details.json")
+  );
+  const parsedVideoDetails = JSON.parse(videoDetailsData);
+  console.log(parsedVideoDetails);
+  return parsedVideoDetails;
+};
 
 router.get("/video-details", (req, res) => {
+  const videoDetails = displayVideoDetails();
   res.json(videoDetails);
+  console.log(videoDetails);
 });
 
-router.get("/videos", (req, res) => {
-  res.json(videos);
-});
+// const videos = () => {
+//   const videosData = fs.readFileSync(
+//     path.resolve(__dirname, "../data/videos.json")
+//   );
+//   const parsedVideos = JSON.parse(videosData);
+//   console.log(parsedVideos);
+//   return parsedVideos;
+// };
+
+// router.get("/videos", (req, res) => {
+//   const videoList = videos();
+//   res.json(videoList);
+// });
 
 module.exports = router;

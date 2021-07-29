@@ -20,26 +20,23 @@ export default class Main extends Component {
   };
 
   componentDidUpdate(prevState, prevProps) {
-    if (prevState.id !== null)
-      axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${this.state.id}?api_key=${apikey}`
-        )
-        .then((res) => {
-          this.setState({
-            videosDetailed: res.data,
-            id: res.id,
-          });
-          return;
-        });
+    // if (prevState.id !== null)
+    //   axios
+    //     .get(
+    //       `https://project-2-api.herokuapp.com/videos/${this.state.id}?api_key=${apikey}`
+    //     )
+    //     .then((res) => {
+    //       this.setState({
+    //         videosDetailed: res.data,
+    //         id: res.id,
+    //       });
+    //       return;
+    //     });
   }
-  //https://project-2-api.herokuapp.com/videos/?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295
-  //https://localhost:8080/videos/video-details
+
   componentDidMount() {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`
-      )
+      .get("/videos/video-details")
       .then((res) => {
         console.log(res.data);
         this.setState({
@@ -47,17 +44,17 @@ export default class Main extends Component {
         });
         return res.data[0].id;
       })
-      .then((res) => {
-        axios
-          .get(
-            `https://project-2-api.herokuapp.com/videos/${res}?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`
-          )
-          .then((res) => {
-            this.setState({
-              videosDetailed: res.data,
-            });
-          });
-      })
+      // .then((res) => {
+      //   axios
+      //     .get(
+      //       `https://project-2-api.herokuapp.com/videos/${res}?api_key=5f40c944-c6f0-45d0-b713-8ec93829e295`
+      //     )
+      //     .then((res) => {
+      //       this.setState({
+      //         videosDetailed: res.data,
+      //       });
+      //     });
+      // })
       .catch((error) => {
         console.log(error);
       });
