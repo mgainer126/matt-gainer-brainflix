@@ -20,6 +20,7 @@ export default class Main extends Component {
     summaryLikes: null, //Summary
     summaryViews: null, //Summary
     summaryDescription: null, //Summary
+    commentsComments: null, //Comments
   };
 
   clickVideo = (click) => {
@@ -45,7 +46,6 @@ export default class Main extends Component {
     axios
       .get("/videos/videos")
       .then((res) => {
-        console.log(res.data[0].id);
         this.setState({
           videos: res.data,
         });
@@ -53,7 +53,6 @@ export default class Main extends Component {
       })
       .then((res) => {
         axios.get(`videos/video-details${res}`).then((res) => {
-          console.log(res.data[0].description);
           this.setState({
             videosDetailed: res.data,
             poster: res.data[0].image,
@@ -63,6 +62,7 @@ export default class Main extends Component {
             summaryLikes: res.data[0].likes,
             summaryViews: res.data[0].views,
             summaryDescription: res.data[0].description,
+            commentsComments: res.data[0].comments,
           });
         });
       })
@@ -89,7 +89,7 @@ export default class Main extends Component {
                   summaryDescription={this.state.summaryDescription}
                 />
                 <CommentsForm />
-                <Comments videosDetailed={this.state.videosDetailed} />
+                <Comments commentsComments={this.state.commentsComments} />
               </div>
               <div className="desktop__right">
                 <h3 className="video-sec">Next Video</h3>

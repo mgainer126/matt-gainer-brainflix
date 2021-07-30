@@ -24,7 +24,6 @@ function Summary({
   let day = newdate.getDate();
   var toyear = new Date(date).getFullYear();
   let fullDate = month + "/" + day + "/" + toyear;
-  console.log(summaryLikes);
 
   return (
     <div className="summary-wrapper">
