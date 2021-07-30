@@ -13,6 +13,13 @@ export default class Main extends Component {
     videos: null,
     videosDetailed: null,
     id: null,
+    poster: null, //Hero
+    summaryTitle: null, //Summary
+    summaryAuthor: null, //Summary
+    summaryTimeStamp: null, //Summary
+    summaryLikes: null, //Summary
+    summaryViews: null, //Summary
+    summaryDescription: null, //Summary
   };
 
   clickVideo = (click) => {
@@ -38,7 +45,7 @@ export default class Main extends Component {
     axios
       .get("/videos/videos")
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data[0].id);
         this.setState({
           videos: res.data,
         });
@@ -46,9 +53,16 @@ export default class Main extends Component {
       })
       .then((res) => {
         axios.get(`videos/video-details${res}`).then((res) => {
-          console.log(res.data[0].comments);
+          console.log(res.data[0].description);
           this.setState({
             videosDetailed: res.data,
+            poster: res.data[0].image,
+            summaryTitle: res.data[0].title,
+            summaryAuthor: res.data[0].channel,
+            summaryTimeStamp: res.data[0].timestamp,
+            summaryLikes: res.data[0].likes,
+            summaryViews: res.data[0].views,
+            summaryDescription: res.data[0].description,
           });
         });
       })
@@ -62,10 +76,18 @@ export default class Main extends Component {
       <>
         {this.state.videosDetailed && this.state.videos && (
           <div>
-            <Hero videosDetailed={this.state.videosDetailed} />
+            <Hero poster={this.state.poster} />
             <div className="desktop">
               <div className="desktop__left">
-                <Summary videosDetailed={this.state.videosDetailed} />
+                <Summary
+                  videosDetailed={this.state.videosDetailed}
+                  summaryTitle={this.state.summaryTitle}
+                  summaryAuthor={this.state.summaryAuthor}
+                  summaryTimeStamp={this.state.timestamp}
+                  summaryLikes={this.state.summaryLikes}
+                  summaryViews={this.state.summaryViews}
+                  summaryDescription={this.state.summaryDescription}
+                />
                 <CommentsForm />
                 <Comments videosDetailed={this.state.videosDetailed} />
               </div>

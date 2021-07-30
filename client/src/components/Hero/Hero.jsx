@@ -2,14 +2,11 @@ import "./Hero.scss";
 
 import "./Hero.scss";
 
-function Hero({ videosDetailed }) {
+function Hero({ poster }) {
+  console.log(poster);
   return (
     <div className="hero">
-      <video
-        poster={videosDetailed.image}
-        className="hero__video"
-        controls
-      ></video>
+      <video poster={poster} className="hero__video" controls></video>
     </div>
   );
 }

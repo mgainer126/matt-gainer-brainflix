@@ -2,7 +2,14 @@ import "./Summary.scss";
 import likesIcon from "../../assets/icons/Icon-likes.svg";
 import viewsIcon from "../../assets/icons/Icon-views.svg";
 
-function Summary({ videosDetailed }) {
+function Summary({
+  videosDetailed,
+  summaryTitle,
+  summaryAuthor,
+  summaryLikes,
+  summaryViews,
+  summaryDescription,
+}) {
   // title,
   // summary,
   // likes,
@@ -17,14 +24,15 @@ function Summary({ videosDetailed }) {
   let day = newdate.getDate();
   var toyear = new Date(date).getFullYear();
   let fullDate = month + "/" + day + "/" + toyear;
+  console.log(summaryLikes);
 
   return (
     <div className="summary-wrapper">
       <div className="summary">
-        <h3 className="summary__title">{videosDetailed.title}</h3>
+        <h3 className="summary__title">{summaryTitle}</h3>
         <div className="summary__aln-info-metrics">
           <div className="summary__author-info">
-            <h4 className="summary__author">{videosDetailed.author}</h4>
+            <h4 className="summary__author">{summaryAuthor}</h4>
             <p className="summary__date">{fullDate}</p>
           </div>
           <div className="summary__metrics">
@@ -33,17 +41,17 @@ function Summary({ videosDetailed }) {
               src={viewsIcon}
               alt="Views Icon"
             ></img>
-            <p className="summary__views">{videosDetailed.views}</p>
+            <p className="summary__views">{summaryViews}</p>
             <img
               className="summary__likes-icon"
               src={likesIcon}
               alt="Likes Icon"
             ></img>
-            <p className="summary__likes">{videosDetailed.likes}</p>
+            <p className="summary__likes">{summaryLikes}</p>
           </div>
         </div>
       </div>
-      <p className="summary__para">"{videosDetailed.description}"</p>
+      <p className="summary__para">"{summaryDescription}"</p>
       <p className="summary__total-comment">3 Comments</p>
     </div>
   );
