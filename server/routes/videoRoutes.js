@@ -12,6 +12,7 @@ const router = express.Router();
 // const videos = require("../data/videos.json");
 const fs = require("fs");
 const path = require("path");
+// const uniqid = require("uniqid");
 
 //Video Details
 const displayVideoDetails = () => {
@@ -42,6 +43,20 @@ const videos = () => {
 router.get("/videos", (req, res) => {
   const videoList = videos();
   res.json(videoList);
+});
+
+router.post("/videos", (req, res) => {
+  const newVideo = displayVideoDetails();
+  const constVideoObj = {
+    id: 111111,
+    title: req.body.videoTitle,
+    channel: req.body.videoName,
+    image: "https://i.imgur.com/ibLw5q5.jpg",
+  };
+  console.log(constVideoObj);
+  newVideo.unshift(constVideoObj);
+  fs.writeFileSync("./data/videos.json", JSON.stringify(newVideo));
+  res.json(newVideo);
 });
 
 module.exports = router;

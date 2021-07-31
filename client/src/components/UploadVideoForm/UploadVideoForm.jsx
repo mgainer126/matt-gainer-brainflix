@@ -1,45 +1,55 @@
 import "../UploadVideoForm/UploadVideoForm.scss";
 import { useHistory } from "react-router-dom";
 
-function UploadVideoForm() {
+function UploadVideoForm({ createVideo }) {
   const history = useHistory();
 
   const handleRoute = () => {
     history.push("/");
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newVideo = {
+      videoTitle: event.target[0].value,
+      videoDesc: event.target[1].value,
+    };
+    createVideo(newVideo);
+    console.log(newVideo);
+  };
+
   return (
     <uploadvideoform className="upload">
-      <form className="upload__form">
-        <label htmlFor="upload" className="upload__header">
+      <form onSubmit={handleSubmit} className="upload__form">
+        <label htmlFor="upload-title" className="upload__header">
           TITLE YOUR VIDEO
           <input
             type="text"
             className="upload__input"
-            id="upload"
-            name="upload"
+            id="upload-title"
+            name="upload-title"
             placeholder="Add a title to your video"
           ></input>
         </label>
-        <label htmlFor="upload" className="upload__header--desc">
+        <label htmlFor="upload-desc" className="upload__header--desc">
           ADD A VIDEO DESCRIPTION
           <input
             type="text"
             className="upload__input-desc"
-            id="upload"
-            name="upload"
+            id="upload-desc"
+            name="upload-desc"
             placeholder="Add a description to your video"
           ></input>
         </label>
         <div className="upload__cta">
           <button
             className="upload__btn"
-            onClick={() => {
-              alert("Congradulations You Have Uploaded Sucesfully");
-              {
-                handleRoute();
-              }
-            }}
+            // onClick={() => {
+            //   alert("Congradulations You Have Uploaded Sucesfully");
+            //   {
+            //     handleRoute();
+            //   }
+            // }}
           >
             PUBLISH
           </button>
