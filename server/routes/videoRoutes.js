@@ -12,7 +12,7 @@ const router = express.Router();
 // const videos = require("../data/videos.json");
 const fs = require("fs");
 const path = require("path");
-// const uniqid = require("uniqid");
+const uniqid = require("uniqid");
 
 //Video Details
 const displayVideoDetails = () => {
@@ -48,10 +48,11 @@ router.get("/videos", (req, res) => {
 router.post("/videos", (req, res) => {
   const newVideo = displayVideoDetails();
   const constVideoObj = {
-    id: 111111,
+    id: uniqid(),
     title: req.body.videoTitle,
-    channel: req.body.videoName,
+    channel: "Matt Gainer",
     image: "https://i.imgur.com/ibLw5q5.jpg",
+    description: req.body.VideoDesc,
   };
   console.log(constVideoObj);
   newVideo.unshift(constVideoObj);
