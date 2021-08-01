@@ -3,10 +3,8 @@ import "./Video.scss";
 
 import "./Video.scss";
 
-function Video({ videosArr, clickHandle, videosDetailed }) {
-  let filteredArray = videosArr.filter(
-    (video) => video.id !== videosDetailed.id
-  );
+function Video({ videosArr, clickHandle, idCurrentHero }) {
+  let filteredArray = videosArr.filter((video) => video.id !== idCurrentHero);
 
   return filteredArray.map((video) => {
     return (

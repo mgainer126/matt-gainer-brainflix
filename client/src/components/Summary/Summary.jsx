@@ -9,6 +9,7 @@ function Summary({
   summaryLikes,
   summaryViews,
   summaryDescription,
+  summaryTimeStamp,
 }) {
   // title,
   // summary,
@@ -18,12 +19,13 @@ function Summary({
   // viewsIcon,
   // author,
   // timestamp,
-  let date = videosDetailed.timestamp;
+  let date = summaryTimeStamp;
   let newdate = new Date(date * 1000);
   let month = newdate.getMonth();
   let day = newdate.getDate();
   var toyear = new Date(date).getFullYear();
   let fullDate = month + "/" + day + "/" + toyear;
+  console.log(summaryTimeStamp);
 
   return (
     <div className="summary-wrapper">

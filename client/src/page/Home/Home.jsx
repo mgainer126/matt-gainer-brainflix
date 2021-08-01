@@ -24,7 +24,17 @@ export default class Main extends Component {
   };
 
   clickVideo = (click) => {
-    this.setState({ id: click.id });
+    console.log(click);
+    this.setState({
+      poster: click.image,
+      id: click.id,
+      summaryTitle: click.title, //Summary
+      summaryAuthor: click.channel, //Summary
+      summaryTimeStamp: click.timestamp, //Summary
+      summaryLikes: click.likes, //Summary
+      summaryViews: click.views, //Summary
+      summaryDescription: click.description, //Summary
+    });
   };
 
   componentDidUpdate(prevState, prevProps) {
@@ -83,7 +93,7 @@ export default class Main extends Component {
                   videosDetailed={this.state.videosDetailed}
                   summaryTitle={this.state.summaryTitle}
                   summaryAuthor={this.state.summaryAuthor}
-                  summaryTimeStamp={this.state.timestamp}
+                  summaryTimeStamp={this.state.summaryTimeStamp}
                   summaryLikes={this.state.summaryLikes}
                   summaryViews={this.state.summaryViews}
                   summaryDescription={this.state.summaryDescription}
@@ -96,7 +106,7 @@ export default class Main extends Component {
                 <Video
                   videosArr={this.state.videos}
                   clickHandle={this.clickVideo}
-                  videosDetailed={this.state.videosDetailed}
+                  idCurrentHero={this.state.id}
                 />
               </div>
             </div>

@@ -16,6 +16,7 @@ function UploadVideoForm({ createVideo }) {
     };
     createVideo(newVideo);
     console.log(newVideo);
+    console.log(event.target);
   };
 
   return (
@@ -44,12 +45,12 @@ function UploadVideoForm({ createVideo }) {
         <div className="upload__cta">
           <button
             className="upload__btn"
-            // onClick={() => {
-            //   alert("Congradulations You Have Uploaded Sucesfully");
-            //   {
-            //     handleRoute();
-            //   }
-            // }}
+            onClick={() => {
+              alert("Congradulations You Have Uploaded Sucesfully");
+              // {
+              //   handleRoute();
+              // }
+            }}
           >
             PUBLISH
           </button>

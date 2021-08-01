@@ -52,7 +52,10 @@ router.post("/videos", (req, res) => {
     title: req.body.videoTitle,
     channel: "Matt Gainer",
     image: "https://i.imgur.com/ibLw5q5.jpg",
-    description: req.body.VideoDesc,
+    description: req.body.videoDesc,
+    timestamp: +new Date(),
+    likes: 1500,
+    views: 3200,
   };
   console.log(constVideoObj);
   newVideo.unshift(constVideoObj);
