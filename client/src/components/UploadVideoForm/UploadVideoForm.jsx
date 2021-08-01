@@ -7,14 +7,15 @@ function UploadVideoForm({ createVideo }) {
   const handleRoute = () => {
     history.push("/");
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const newVideo = {
       videoTitle: event.target[0].value,
       videoDesc: event.target[1].value,
     };
     createVideo(newVideo);
+    handleRoute();
     console.log(newVideo);
     console.log(event.target);
   };
@@ -46,14 +47,12 @@ function UploadVideoForm({ createVideo }) {
           <button
             className="upload__btn"
             onClick={() => {
-              alert("Congradulations You Have Uploaded Sucesfully");
-              // {
-              //   handleRoute();
-              // }
+              alert("Congraduations You Have Uploaded Sucesfully");
             }}
           >
             PUBLISH
           </button>
+
           <button className="upload__btn--cancel">CANCEL</button>
         </div>
       </form>

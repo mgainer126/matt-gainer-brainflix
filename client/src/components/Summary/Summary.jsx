@@ -2,23 +2,13 @@ import "./Summary.scss";
 import likesIcon from "../../assets/icons/Icon-likes.svg";
 import viewsIcon from "../../assets/icons/Icon-views.svg";
 
-function Summary({
-  // videosDetailed,
-  summaryTitle,
-  summaryAuthor,
-  summaryLikes,
-  summaryViews,
-  summaryDescription,
-  summaryTimeStamp,
-  summaryVideos,
-}) {
+function Summary({ summaryVideos }) {
   let date = summaryVideos.timestamp;
   let newdate = new Date(date * 1000);
   let month = newdate.getMonth();
   let day = newdate.getDate();
   var toyear = new Date(date).getFullYear();
   let fullDate = month + "/" + day + "/" + toyear;
-  console.log(summaryVideos);
   return (
     <div className="summary-wrapper">
       <div className="summary">

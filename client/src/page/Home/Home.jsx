@@ -12,11 +12,10 @@ export default class Main extends Component {
     videos: null,
     videosDetailed: null,
     id: null,
-    summaryVideos: null, //here is the experimient
+    summaryVideos: null,
   };
 
   clickVideo = (click) => {
-    console.log(click);
     this.setState({
       id: click.id,
       summaryVideos: click,
@@ -30,8 +29,6 @@ export default class Main extends Component {
         this.setState({
           videos: res.data,
         });
-        console.log(res.data[0].id);
-
         return res.data[0].id;
       })
       .then((res) => {
@@ -41,7 +38,6 @@ export default class Main extends Component {
             videosDetailed: res.data,
             summaryVideos: videoData, //here is the experimient
           });
-          console.log(res);
         });
       })
       .catch((error) => {
