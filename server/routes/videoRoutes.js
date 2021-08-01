@@ -47,18 +47,19 @@ router.get("/videos", (req, res) => {
 
 router.post("/videos", (req, res) => {
   const newVideo = displayVideoDetails();
-  const constVideoObj = {
+  let randomImage = Math.floor(Math.random() * 6) + 1;
+  const videoObj = {
     id: uniqid(),
     title: req.body.videoTitle,
     channel: "Matt Gainer",
-    image: "https://i.imgur.com/ibLw5q5.jpg",
+    image: `https://source.unsplash.com/collection/${randomImage}/1600x900`,
     description: req.body.videoDesc,
     timestamp: +new Date(),
     likes: 1500,
     views: 3200,
   };
-  console.log(constVideoObj);
-  newVideo.unshift(constVideoObj);
+  console.log(videoObj);
+  newVideo.unshift(videoObj);
   fs.writeFileSync("./data/videos.json", JSON.stringify(newVideo));
   res.json(newVideo);
 });

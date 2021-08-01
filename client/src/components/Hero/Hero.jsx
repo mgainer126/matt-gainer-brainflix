@@ -2,10 +2,14 @@ import "./Hero.scss";
 
 import "./Hero.scss";
 
-function Hero({ poster }) {
+function Hero({ poster, summaryVideos }) {
   return (
     <div className="hero">
-      <video poster={poster} className="hero__video" controls></video>
+      <video
+        poster={summaryVideos.image}
+        className="hero__video"
+        controls
+      ></video>
     </div>
   );
 }

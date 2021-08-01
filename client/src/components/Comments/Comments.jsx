@@ -1,8 +1,8 @@
 import "./Comments.scss";
 
 function Comments({ commentsComments }) {
-  let videoArr = commentsComments;
-
+  let videoArr = commentsComments[0].comments;
+  console.log(videoArr);
   return videoArr.map((comment) => {
     let date = comment.timestamp;
     let newdate = new Date(date * 1000);
