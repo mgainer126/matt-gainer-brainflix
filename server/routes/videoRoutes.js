@@ -12,7 +12,7 @@ const router = express.Router();
 // const videos = require("../data/videos.json");
 const fs = require("fs");
 const path = require("path");
-const uniqid = require("uniqid");
+const uniqid = require("uuid");
 
 //Video Details
 const displayVideoDetails = () => {
