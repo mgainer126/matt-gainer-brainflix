@@ -1,4 +1,4 @@
-# matt-gainer-brainflix
+
 # matt-gainer-brainflix
 Installation Using Terminal
 1. Clone the repo by running the following: 
